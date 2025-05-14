@@ -22,6 +22,12 @@ public class ProdutoDTO {
         this.precoProduto=precoProduto;
     }
 
+    public ProdutoDTO(Produto produto) {
+        this.id= produto.getId();
+        this.nomeProduto=produto.getNomeProduto();
+        this.precoProduto=produto.getPrecoProduto();
+    }
+
     public static Produto toEntity(ProdutoDTO produtoDTO, ModelMapper modelMapper) {
         return modelMapper.map(produtoDTO, Produto.class);
     }

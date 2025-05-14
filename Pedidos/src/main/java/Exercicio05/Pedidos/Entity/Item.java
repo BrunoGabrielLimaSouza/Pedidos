@@ -1,5 +1,6 @@
 package Exercicio05.Pedidos.Entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,17 +10,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_Clientes")
-public class Cliente {
+@Table(name = "tb_Item")
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
-    private String nome;
+    @ManyToOne
+    private Pedido pedido;
 
-    @Column(unique = true, name = "email")
-    private String email;
+    @ManyToOne
+    private Produto produto;
+
+    private Integer quantidade;
 }
