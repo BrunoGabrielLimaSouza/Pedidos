@@ -5,6 +5,8 @@ import Exercicio05.Pedidos.Entity.Produto;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
+import java.math.BigDecimal;
+
 @Data
 public class ProdutoDTO {
 
@@ -12,11 +14,11 @@ public class ProdutoDTO {
 
     private String nomeProduto;
 
-    private Double precoProduto;
+    private BigDecimal precoProduto;
 
     public ProdutoDTO(){}
 
-    public ProdutoDTO(Long id, String nomeProduto, Double precoProduto){
+    public ProdutoDTO(Long id, String nomeProduto, BigDecimal precoProduto){
         this.id=id;
         this.nomeProduto=nomeProduto;
         this.precoProduto=precoProduto;

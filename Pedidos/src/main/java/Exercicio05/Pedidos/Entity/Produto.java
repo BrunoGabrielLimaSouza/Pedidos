@@ -4,10 +4,14 @@ package Exercicio05.Pedidos.Entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Table(name = "tb_Produtos")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Produto {
 
@@ -20,7 +24,8 @@ public class Produto {
     private String nomeProduto;
 
     @Column(name = "precoProduto")
-    private Double precoProduto;
+    private BigDecimal precoProduto;
+
 
 
 }

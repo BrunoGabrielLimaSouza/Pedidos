@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -17,6 +18,7 @@ import java.util.List;
 public class PedidoDTO {
     private Long clienteId;
     private List<ItemDTO> itens;
+    private BigDecimal valorTotal;
 
 
 
