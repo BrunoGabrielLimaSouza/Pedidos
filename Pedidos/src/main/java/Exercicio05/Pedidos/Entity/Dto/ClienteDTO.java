@@ -1,8 +1,11 @@
 package Exercicio05.Pedidos.Entity.Dto;
 
 import Exercicio05.Pedidos.Entity.Cliente;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+
 
 @Data
 public class ClienteDTO {
@@ -20,6 +23,13 @@ public class ClienteDTO {
         this.nome = nome;
         this.email = email;
     }
+
+    public ClienteDTO(Cliente cliente) {
+        this.id = cliente.getId();
+        this.nome = cliente.getNome();
+        this.email = cliente.getEmail();
+    }
+
     public static Cliente toEntity(ClienteDTO clienteDTO, ModelMapper modelMapper) {
         return modelMapper.map(clienteDTO, Cliente.class);
     }

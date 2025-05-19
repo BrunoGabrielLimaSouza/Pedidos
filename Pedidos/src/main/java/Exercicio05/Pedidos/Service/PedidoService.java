@@ -1,6 +1,7 @@
 package Exercicio05.Pedidos.Service;
 
 import Exercicio05.Pedidos.Entity.Cliente;
+import Exercicio05.Pedidos.Entity.Dto.ClienteDTO;
 import Exercicio05.Pedidos.Entity.Dto.ItemDTO;
 import Exercicio05.Pedidos.Entity.Dto.PedidoDTO;
 import Exercicio05.Pedidos.Entity.Item;
@@ -74,6 +75,9 @@ public class PedidoService {
         return pedidoRepository.save(pedido);
     }
 
-
+    public List<PedidoDTO> listarPedidos() {
+        List<Pedido> pedidos = pedidoRepository.findAll();
+        return pedidos.stream().map(PedidoDTO::new).toList();
+    }
 
 }

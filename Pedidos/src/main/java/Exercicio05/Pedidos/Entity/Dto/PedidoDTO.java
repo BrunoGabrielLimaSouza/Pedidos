@@ -21,6 +21,14 @@ public class PedidoDTO {
     private BigDecimal valorTotal;
 
 
+    public PedidoDTO(Pedido pedido) {
+        this.clienteId = pedido.getCliente().getId();
+        this.itens = pedido.getItens()
+                .stream()
+                .map(ItemDTO::new)
+                .toList();
+        this.valorTotal = pedido.getValorTotal();
+    }
 
     public static Pedido toEntity(PedidoDTO pedidoDTO, ModelMapper modelMapper) {
         return modelMapper.map(pedidoDTO, Pedido.class);
